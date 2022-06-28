@@ -1,0 +1,19 @@
+
+arduino中如果用serial.write()，
+
+被p5.js的这个draw函数的serial.readString接受
+
+
+function draw() {
+  background(255, 255, 255);
+  fill(0, 0, 0);
+  text(latestData, 10, 10);
+  // ellipse(50,50,latestData,latestData);
+  rect(100, 100, 50, 50);
+  if (serial.available() > 0) {
+    // let data = serial.readStringUntil('\n');
+    let data = serial.readString();
+    if (data == "on"){
+    console.log(data);
+    }
+  }
